@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Termwind\Components\Dd;
 
 class ProductController extends Controller
@@ -138,6 +139,10 @@ class ProductController extends Controller
             return response()->json([
                 'message' => 'Product not found'
             ], 404);
+        }
+        /* delete image */
+        if ($product->image) {
+            Storage::disk('public')->delete($product->image);
         }
         $product->delete();
         return response()->json([
