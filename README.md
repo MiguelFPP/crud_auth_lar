@@ -1,5 +1,7 @@
 # API CRUD AUTH
 
+this api uses authentication from laravel passport. [Repository](https://github.com/laravel/passport), [Documentation](https://laravel.com/docs/9.x/passport)
+
 ## Installation
 
 Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/9.x)
